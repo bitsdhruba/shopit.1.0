@@ -26,18 +26,9 @@ export default function AppContextProvider ({children}){
     const [search, setSearch] = useState("");
 
     function changeHandler(event) {
-      setSearch(event.target.value);
     }
 
-    const [cartItem, setCartItem] = useState([]);
 
-    function addToCartHandler(){
-      console.log("item added to cart")
-    }
-
-    function buyNowHandler() {
-      console.log("buy now");
-    }
 
     const value = {
       products,
@@ -48,10 +39,6 @@ export default function AppContextProvider ({children}){
       changeHandler,
       search,
       setSearch,
-      addToCartHandler,
-      buyNowHandler,
-      cartItem,
-      setCartItem,
     }
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>

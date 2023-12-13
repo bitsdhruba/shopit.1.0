@@ -8,11 +8,15 @@ export default function NavBar() {
 
   const{search, changeHandler} = useContext(AppContext);
 
+  function searchHandler(){
+    changeHandler();
+  }
+
   return (
-    <div>
-      <nav>
+    <div className="w-full h-20 bg-black text-white fixed top-0">
+      <nav className="flex items-center justify-between w-3/5 h-20 m-auto ">
         <NavLink to="/">
-          <h1>ShopIt</h1>
+          <h1 className="text-2xl font-lg">ShopIt</h1>
         </NavLink>
 
         <input
@@ -20,15 +24,16 @@ export default function NavBar() {
           name="search"
           placeholder="Search your product"
           value={search}
-          onChange={()=>changeHandler()}
+          onChange={searchHandler}
+          className="rounded-xl h-10 w-3/5 bg-slate-600 p-2 m-1 text-xl text-center"
         />
 
-        <ul>
+        <ul className="flex">
           <NavLink to="/">
-            <li>Home</li>
+            <li className="mx-3">Home</li>
           </NavLink>
           <NavLink to="/cart">
-            <li>Cart</li>
+            <li className="mx-3">Cart</li>
           </NavLink>
         </ul>
       </nav>
