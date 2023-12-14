@@ -23,22 +23,12 @@ export default function AppContextProvider ({children}){
         setLoad(false);
     }
 
-    const [search, setSearch] = useState("");
-
-    function changeHandler(event) {
-    }
-
-
-
     const value = {
       products,
       setProducts,
       fetchProducts,
       load,
       setLoad,
-      changeHandler,
-      search,
-      setSearch,
     }
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>

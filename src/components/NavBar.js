@@ -1,15 +1,13 @@
-
-import { useContext } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { AppContext } from "../Context/AppContext";
 
 
 export default function NavBar() {
 
-  const{search, changeHandler} = useContext(AppContext);
+  const [search , setSearch] = useState('');
 
-  function searchHandler(){
-    changeHandler();
+  function searchHandler(event){
+    setSearch(event.target.value);
   }
 
   return (
@@ -21,8 +19,8 @@ export default function NavBar() {
 
         <input
           type="text"
-          name="search"
-          placeholder="Search your product"
+          name="search" 
+          placeholder="Search a Category"
           value={search}
           onChange={searchHandler}
           className="rounded-xl h-10 w-3/5 bg-slate-600 p-2 m-1 text-xl text-center"
