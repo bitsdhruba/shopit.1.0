@@ -8,7 +8,7 @@ export default function AppContextProvider ({children}){
 
     const [products, setProducts] = useState([]);
     const [ load, setLoad] = useState(false);
-    const url = "https://dummyjson.com/products?limit=10";
+    const url = "https://dummyjson.com/products/";
 
     async function fetchProducts (){
         setLoad(true);
@@ -23,12 +23,21 @@ export default function AppContextProvider ({children}){
         setLoad(false);
     }
 
+    const [query, setQuery] = useState('');
+
+    function searchHandler(event){
+        setQuery(event.target.value);
+    }
+
+
     const value = {
       products,
       setProducts,
       fetchProducts,
       load,
       setLoad,
+      searchHandler,
+      query,
     }
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
