@@ -1,29 +1,35 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function ProductDetail({product}) {
-  
-  
+function ProductDetail({ product }) {
   return (
-    <div className="flex justify-between m-3 p-2 bg-gray-300 shadow-md h-[300px]">
-      <div className="w-[300px] m-2 p-1">
-        <img
-          src={product.thumbnail}
-          alt={product.title}
-          className="h-full w-full aspect-square object-cover"
-        />
+    <div className="bg-gray-300 h-[300px] w-[200px] p-2 rounded-lg shadow-slate-400 shadow-md">
+      <div className="">
+        <Link to={`/productDetailPage/${product.id}`}>
+          <img
+            src={product.thumbnail}
+            alt={product.title}
+            className="object-cover aspect-square"
+          />
+        </Link>
       </div>
-      <div className="w-[600px]">
-        <h1 className="text-3xl mx-2 mt-10">{product.title}</h1>
-        <p className="text-md m-2">
-          <span className='bg-green-500 text-white px-1'>{product.rating}</span> Ratings
-        </p>
-        <p className="text-gray-700 text-lg mx-2 mt-3">{product.description}</p>
-      </div>
+      <div className="">
+        <h1 className="text-xl font-medium mt-3">
+          <Link to={`/productDetailPage/${product.id}`}>
+            {product.title.length > 17
+              ? product.title.slice(0, 17)
+              : product.title}
+          </Link>
+        </h1>
 
-      <div className="w-[200px]">
-        <h1 className="text-3xl font-bold mt-10">₹ {product.price}</h1>
-        <p className="text-md m-2 text-green-500">
-          {product.discountPercentage} % off
+        <span className="text-md bg-green-500 text-white px-2 mt-3 rounded-md">
+          {product.rating}
+        </span>
+        <p className="mt-2">
+          <span className="text-lg font-bold ">$ {product.price}</span>
+          <span className="text-md  text-green-500 ml-3">
+            {product.discountPercentage} % off
+          </span>
         </p>
       </div>
     </div>

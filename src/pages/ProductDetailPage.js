@@ -4,7 +4,6 @@ import { AppContext } from "../Context/AppContext";
 import React, { useContext, useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
 
-
 function ProductDetail() {
   const { load, setLoad } = useContext(AppContext);
   const baseUrl = "https://dummyjson.com/products";
@@ -36,11 +35,11 @@ function ProductDetail() {
   }, [location.pathname]);
 
   return (
-    <div className="mt-20 min-h-full bg-slate-200">
+    <div className="max-w-[1200px] mx-auto">
       {load ? (
-        <>
-          <p>Loading...</p> <Spinner />{" "}
-        </>
+        <div className="flex justify-center items-center">
+          <Spinner />
+        </div>
       ) : (
         <MoreProductDetail detail={detail} />
       )}
