@@ -21,7 +21,7 @@ function ProductsPage() {
   return (
     <div>
       {filteredProducts.length > 0 ? (
-        <div className="flex flex-wrap gap-4 justify-evenly">
+        <div className="flex flex-wrap gap-3 sm:gap-8 justify-evenly">
           {filteredProducts.map((product) => {
             return <ProductDetail product={product} key={product.id} />;
           })}
@@ -31,12 +31,10 @@ function ProductsPage() {
           <p className="text-3xl m-2">No Product Found, sorry :(</p>
           <p className="text-2xl m-2">Try Something from below...</p>
           <div>
-            {category.map((product) => {
-              return (
-                <ul className="text-2xl shadow-sm m-2">
-                  <li>{product}</li>
-                </ul>
-              );
+            {category.forEach((product) => {
+              <ul className="text-2xl shadow-sm m-2">
+                <li>{product}</li>
+              </ul>;
             })}
           </div>
         </div>

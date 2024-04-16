@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 
 function ProductDetail({ product }) {
   return (
-    <div className="bg-gray-300 h-[300px] w-[200px] p-2 rounded-lg shadow-slate-400 shadow-md">
+    <div className="h-[300px] sm:h-[400px] w-[184px] sm:w-[268px] rounded-lg shadow-slate-400 shadow-md">
       <div className="">
         <Link to={`/productDetailPage/${product.id}`}>
           <img
             src={product.thumbnail}
             alt={product.title}
             className="object-cover aspect-square"
+            loading="lazy"
           />
         </Link>
       </div>
-      <div className="">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-xl font-medium mt-3">
           <Link to={`/productDetailPage/${product.id}`}>
             {product.title.length > 17

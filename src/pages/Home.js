@@ -13,12 +13,11 @@ function Home() {
   return (
     <div className="max-w-[1200px] min-h-screen mx-auto">
       {load ? (
-        <div className="flex items-center justify-center">
-          <p>Loading...</p>
+        <div className="flex items-center justify-center mt-40">
           <Spinner />
         </div>
       ) : (
-        <div className="mt-20">
+        <div className="mt-20 p-2">
           <Products />
         </div>
       )}

@@ -37,7 +37,7 @@ function ProductDetail() {
   return (
     <div className="max-w-[1200px] mx-auto">
       {load ? (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-[30rem]">
           <Spinner />
         </div>
       ) : (
