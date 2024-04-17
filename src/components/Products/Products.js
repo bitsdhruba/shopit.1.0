@@ -5,7 +5,7 @@ import ProductDetail from "../Products/ProductDetail";
 function ProductsPage() {
   const { products, query } = useContext(AppContext);
 
-  const category = [
+  const categories = [
     "smartphones",
     "laptops",
     "fragrances",
@@ -31,10 +31,12 @@ function ProductsPage() {
           <p className="text-3xl m-2">No Product Found, sorry :(</p>
           <p className="text-2xl m-2">Try Something from below...</p>
           <div>
-            {category.forEach((product) => {
-              <ul className="text-2xl shadow-sm m-2">
-                <li>{product}</li>
-              </ul>;
+            {categories.map((items, i) => {
+              return (
+                <ul className="text-2xl shadow-sm m-2" key={i}>
+                  <li>{items}</li>
+                </ul>
+              );
             })}
           </div>
         </div>
