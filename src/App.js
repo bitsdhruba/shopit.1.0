@@ -4,11 +4,13 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NavBar from "./components/NavBar";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import BreadCrumb from "./components/BreadCrumb";
 
 function App() {
   return (
     <div>
       <NavBar />
+      <BreadCrumb />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

@@ -15,7 +15,7 @@ function MoreProductDetail({ detail }) {
 
   return (
     <div>
-      <div className="mt-20 px-3 sm:flex">
+      <div className="px-3 sm:flex">
         <div className="rounded-md p-3 flex items-center justify-center sm:w-3/5">
           <img
             src={detail.thumbnail}

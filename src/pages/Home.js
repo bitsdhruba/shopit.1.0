@@ -20,7 +20,7 @@ function Home() {
           <Spinner />
         </div>
       ) : (
-        <div className="mt-20 p-2">
+        <div className="mt-4 p-2">
           <Products />
           <div className="my-12">
             <Pagination page={page} />

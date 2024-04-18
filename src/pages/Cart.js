@@ -13,7 +13,7 @@ function Cart() {
   }, [Cart]);
 
   return (
-    <div className="mt-24 max-w-[1200px] mx-auto">
+    <div className="mt-4 max-w-[1200px] mx-auto">
       <h1 className="text-4xl font-medium text-center mb-10">My Cart</h1>
 
       {Cart.length > 0 ? (
