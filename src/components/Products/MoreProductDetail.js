@@ -4,6 +4,7 @@ import { addToCart } from "../../redux/slices/Slice";
 import { BsCartCheck } from "react-icons/bs";
 import { BsCartPlus } from "react-icons/bs";
 import RelatedProducts from "./RelatedProducts";
+import toast from "react-hot-toast";
 
 function MoreProductDetail({ detail }) {
   const Cart = useSelector((state) => state.Cart);
@@ -11,6 +12,7 @@ function MoreProductDetail({ detail }) {
 
   function addToCartHandler() {
     dispatch(addToCart(detail));
+    toast.success("Item added to the Cart");
   }
 
   return (
@@ -24,7 +26,7 @@ function MoreProductDetail({ detail }) {
             loading="lazy"
           />
         </div>
-        <div className="sm:flex sm:items-center sm:justify-evenly sm:relative z-0">
+        <div className="sm:flex sm:items-center sm:w-2/5 sm:justify-evenly sm:relative z-0">
           <div className="my-4">
             <h1 className="text-2xl">{detail.title}</h1>
             <h1 className="  mt-2 ">

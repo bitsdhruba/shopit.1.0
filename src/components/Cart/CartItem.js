@@ -1,12 +1,14 @@
 import React from "react";
 import { removeFromCart } from "../../redux/slices/Slice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 function CartItem({ item }) {
   const dispatch = useDispatch();
 
   function removeItemHandler() {
     dispatch(removeFromCart(item.id));
+    toast.error("Items Removed");
   }
 
   return (
